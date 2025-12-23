@@ -22,19 +22,19 @@ public class RecoverPasswordUseCase
     {
         var user = await _repo.GetByEmailAsync(email);
         if (user == null)
-            return Result<bool>.Failure("User not found");
+            return Result<bool>.Failure(error: "User not found");
 
         var tokenResult = await _passwordService.GeneratePasswordResetToken(email);
         if (!tokenResult.IsSucces)
-            return Result<bool>.Failure(tokenResult.Error!);
+            return Result<bool>.Failure(error: tokenResult.Error!);
 
         var token = Uri.EscapeDataString(tokenResult.Value!);
         var link = $"https://miapp.com/reset-password?userId={user.Id}&token={token}";
 
         await _emailService.SendEmailAsync(user.Email!, "Reset your password",
-            $"{user.Name}, Click to change the password: {link}");
+            $"{user.Name}, Click para cambiar contrasenia: {link}");
 
-        return Result<bool>.Succes(true);
+        return Result<bool>.Succes(value: true, message: "Correo de cambio de contrasenia enviado exitosamente");
     }
 }
 

@@ -44,7 +44,7 @@ public class IdentityEmailService : IEmailService
             return Result<bool>.Succes(true);
         }catch(Exception ex)
         {
-            return Result<bool>.Failure($"Error sending{ex.Message}");
+            return Result<bool>.Failure(error: $"Error sending{ex.Message}");
         }
     }
 }

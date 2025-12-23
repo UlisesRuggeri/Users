@@ -1,5 +1,16 @@
+D:\Users\Application\bin\Debug\net8.0\Application.deps.json
+D:\Users\Application\bin\Debug\net8.0\Application.dll
+D:\Users\Application\bin\Debug\net8.0\Application.pdb
+D:\Users\Application\bin\Debug\net8.0\Domain.dll
+D:\Users\Application\bin\Debug\net8.0\Domain.pdb
 D:\Users\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
 D:\Users\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\Users\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
 D:\Users\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
 D:\Users\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\Users\Application\obj\Debug\net8.0\Application.sourcelink.json
+D:\Users\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+D:\Users\Application\obj\Debug\net8.0\Application.dll
+D:\Users\Application\obj\Debug\net8.0\refint\Application.dll
+D:\Users\Application\obj\Debug\net8.0\Application.pdb
+D:\Users\Application\obj\Debug\net8.0\ref\Application.dll

@@ -19,21 +19,21 @@ public class LoginUseCase
         _authService = authService;
         _repo = repo;
     }
-    public async Task<Result<bool>> Login(LoginRequest dto)
+    public async Task<Result<int>> Login(LoginRequest dto)
     {
         var user = await _repo.GetByEmailAsync(dto.Email!);
-        if (user == null) return Result<bool>.Failure("User not found");
+        if (user == null) return Result<int>.Failure(error: "User not found");
 
         if (!user.IsActive)
-            return Result<bool>.Failure("Usuario blocked");
-
-        if (_authSettings.RequireConfirmedEmail && !user.EmailConfirmed)
-            return Result<bool>.Failure("You have to confirm your email to continue");
+            return Result<int>.Failure(error: "Usuario blocked");
 
         var loginResult = await _authService.Login(dto);
         if (!loginResult.IsSucces)
-            return Result<bool>.Failure(loginResult.Error!);
+            return Result<int>.Failure(error: loginResult.Error!);
 
-        return Result<bool>.Succes(true);
+        if (_authSettings.RequireConfirmedEmail && !user.EmailConfirmed)
+            return Result<int>.Failure(value: user.Id, error: "You have to confirm your email to continue");
+
+        return Result<int>.Succes(user.Id);
     }
 }

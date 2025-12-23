@@ -25,11 +25,11 @@ public class IdentityPasswordService : IPasswordService
     {
         var user = await _userManager.FindByIdAsync(userId.ToString());
         if (user == null)
-            return Result<bool>.Failure("User not found");
+            return Result<bool>.Failure(error: "User not found");
 
         var result = await _userManager.ResetPasswordAsync(user, token, newPassword);
         if (!result.Succeeded)
-            return Result<bool>.Failure(string.Join(",", result.Errors.Select(e => e.Description)));
+            return Result<bool>.Failure(error: string.Join(",", result.Errors.Select(e => e.Description)));
 
         return Result<bool>.Succes(true);
     }
@@ -38,12 +38,12 @@ public class IdentityPasswordService : IPasswordService
     {
         var user = await _userManager.FindByIdAsync(userId.ToString());
         if (user == null)
-            return Result<bool>.Failure("User not found");
+            return Result<bool>.Failure(error: "User not found");
 
         var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
         if (!result.Succeeded)
-            return Result<bool>.Failure(string.Join(", ", result.Errors.Select(e => e.Description)));
+            return Result<bool>.Failure(error:string.Join(", ", result.Errors.Select(e => e.Description)));
 
-        return Result<bool>.Succes(true);
+        return Result<bool>.Succes(value:true, message: "CONTRASENIA cambiada exitosamente con identity");
     }
 }

@@ -26,7 +26,7 @@ public class IdentityClaimService : IClaimService
         var user = _httpContextAccessor.HttpContext?.User;
 
         if (user == null || !user.Identity!.IsAuthenticated)
-            return Task.FromResult(Result<UserDto>.Failure("There isn't an authenticated user"));
+            return Task.FromResult(Result<UserDto>.Failure(error: "no hay un usuario autenticado"));
 
         var dto = new UserDto
         {
@@ -35,7 +35,7 @@ public class IdentityClaimService : IClaimService
             Name = user.FindFirst(ClaimTypes.Name)?.Value
         };
 
-        return Task.FromResult(Result<UserDto>.Succes(dto));
+        return Task.FromResult(Result<UserDto>.Succes(value:dto, message: "SE COMPLETO getCurrentUser de identity, con validaciones .IsAuthenticated"));
     }
 
     public async Task SignOutAsync()

@@ -20,13 +20,13 @@ public class IdentityAuthService : IAuthService
     public async Task<Result<bool>> Login(LoginRequest dto)
     {
         var user = await _userManager.FindByEmailAsync(dto.Email!);
-        if (user == null) return Result<bool>.Failure("User not found");
+        if (user == null) return Result<bool>.Failure(error: "Usuario no encontrado");
 
 
         var result = await _signInManager.PasswordSignInAsync(user, dto.Password, isPersistent: true, lockoutOnFailure: false);
         if (!result.Succeeded)
-            return Result<bool>.Failure("Invalid credentials");
+            return Result<bool>.Failure(error:"credenciales invalidas, no se puede hacer el cambio de contrasenia");
 
-        return Result<bool>.Succes(true);
+        return Result<bool>.Succes(value: true, message: "Log In con identity exitoso");
     }
 }

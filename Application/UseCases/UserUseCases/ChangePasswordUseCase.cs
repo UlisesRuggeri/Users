@@ -23,12 +23,12 @@ public class ChangePasswordUseCase
     {
         var user = await _repo.GetByIdAsync(dto.UserId);
         if (user == null)
-            return Result<bool>.Failure("User not found");
+            return Result<bool>.Failure(error: "User not found");
 
         var result = await _passwordService.ResetPassword(dto.UserId, dto.Token!, dto.NewPassword!);
         if (!result.IsSucces)
-            return Result<bool>.Failure(result.Error!);
+            return Result<bool>.Failure(error: result.Error!);
 
-        return Result<bool>.Succes(true);
+        return Result<bool>.Succes(value: true, message: "Se cambio la contrasenia correctamente");
     }
 }

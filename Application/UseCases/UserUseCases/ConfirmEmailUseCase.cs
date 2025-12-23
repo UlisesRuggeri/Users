@@ -20,16 +20,16 @@ public class ConfirmEmailUseCase
     {
         var user = await _repo.GetByIdAsync(userId);
         if (user == null)
-            return Result<bool>.Failure("User not found");
+            return Result<bool>.Failure(error: "Usuario No encontrado");
 
         var tokenResult = await _emailService.GenerateEmailConfirmationToken(userId);
         if (!tokenResult.IsSucces)
-            return Result<bool>.Failure(tokenResult.Error!);
+            return Result<bool>.Failure(error: tokenResult.Error!);
 
-        var token = Uri.EscapeDataString(tokenResult.Value!); //para que sea seguro en url
+        var token = Uri.EscapeDataString(tokenResult.Value!); 
         var confirmationLink = $"https://miapp.com/confirm-email?userId={userId}&token={token}";
 
-        var subject = "Confirm your email";
+        var subject = "Confirmar email";
         var body = $@"
         Hola {user.Name}!!
         aca podes poner el texto que quieras, pero siempre dejando el
@@ -37,9 +37,9 @@ public class ConfirmEmailUseCase
         ";
         var sendResult = await _emailService.SendEmailAsync(user.Email!, subject, body);
         if (!sendResult.IsSucces)
-            return Result<bool>.Failure(sendResult.Error!);
+            return Result<bool>.Failure(error: sendResult.Error!);
 
-        return Result<bool>.Succes(true);
+        return Result<bool>.Succes(value: true, message: "Email Confirmado exitosamente");
 
     }
 }

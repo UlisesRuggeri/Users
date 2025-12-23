@@ -46,6 +46,7 @@ public class UserRepository : IUserRepository
         };
 
         await _userManager.CreateAsync(appUser, password);
+        await _userManager.AddToRoleAsync(appUser, "user");
     }
 
     public async Task UpdateAsync(User user)
