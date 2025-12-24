@@ -1,4 +1,5 @@
-﻿using Application.UseCases.UserUseCases;
+﻿using Application.Interfaces.UserInterfaces;
+using Application.UseCases.UserUseCases;
 using Microsoft.Extensions.DependencyInjection;
 
 

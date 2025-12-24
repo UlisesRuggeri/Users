@@ -4,7 +4,7 @@ using Application.Interfaces.UserInterfaces;
 using Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 
-namespace Infrastructure.Services.Identity;
+namespace Infrastructure;
 
 public class IdentityPasswordService : IPasswordService
 {

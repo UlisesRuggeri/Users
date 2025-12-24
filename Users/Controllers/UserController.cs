@@ -39,7 +39,7 @@ public class UserController : ControllerBase
         return Forbid(result.Error);
     }
 
-    [HttpPost("Login")]
+    [HttpPost("login")]
     [AllowAnonymous]
     public async Task<IActionResult> Login([FromBody] LoginRequest dto)
     {
@@ -49,7 +49,7 @@ public class UserController : ControllerBase
         return BadRequest(result.Error);
     }
 
-    [HttpPut("Register")]
+    [HttpPut("register")]
     [AllowAnonymous]
     public async Task<IActionResult> Register([FromBody] RegisterRequest dto)
     {

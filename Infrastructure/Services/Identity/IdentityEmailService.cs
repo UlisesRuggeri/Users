@@ -17,11 +17,11 @@ public class IdentityEmailService : IEmailService
     public IdentityEmailService( UserManager<ApplicationUser> userManager, IConfiguration config)
     {
         _userManager = userManager;
-        _smtpClient = new SmtpClient("smtp.tu-servidor.com") //Host del proveedor 
+        _smtpClient = new SmtpClient("sandbox.smtp.mailtrap.io") 
         {
-            Port = 587, // normalmente el puerto te lo da el proveedor
-            Credentials = new NetworkCredential("usuario@correo.com", "password"), //tus credenciales en el servicio
-            EnableSsl = true //protege el correo, algunos proveedores exigen que toda conexión esté encriptada
+            Port = 2525, 
+            Credentials = new NetworkCredential("838f32cdae17b5", "73a304b640bce7"),
+            EnableSsl = true 
         };
     }
 

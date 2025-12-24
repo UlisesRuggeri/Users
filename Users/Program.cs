@@ -1,5 +1,6 @@
 using Application.Common;
 using EsteroidesToDo.Application;
+using Infrastructure;
 using Infrastructure.Persistence.Contexts;
 using Infrastructure.Persistence.Data;
 using Infrastructure.Persistence.Entities;
@@ -15,11 +16,12 @@ builder.Services.Configure<AuthSettings>(builder.Configuration.GetSection("AuthS
 
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-       //.AddEntityFrameworkStores<UsersContext>()
+       .AddEntityFrameworkStores<UsersContext>()
        .AddDefaultTokenProviders();
 
-
+builder.Services.AddInfrastructureServices();
 builder.Services.AddApplicationServices();
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -29,6 +31,6 @@ using (var scope = app.Services.CreateScope())
     await RoleSeeder.SeedRoles(roleManager);
 }
 
-app.MapGet("/", () => "Hello World!");
+app.MapControllers();
 
 app.Run();
