@@ -1,5 +1,4 @@
-﻿using Application.Interfaces.UserInterfaces;
-using Application.UseCases.UserUseCases;
+﻿using Application.UseCases.UserUseCases;
 using Microsoft.Extensions.DependencyInjection;
 
 
@@ -17,7 +16,8 @@ public static class DependencyInjection
         services.AddScoped<ChangePasswordUseCase>();
         services.AddScoped<GetCurrentUserUseCase>();
         services.AddScoped<LogOutUseCase>();
-
+        services.AddScoped<DeleteUserUseCase>();
+        services.AddScoped<UpdateUserUseCase>();
         return services;
     }
 }

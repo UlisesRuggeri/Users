@@ -1,5 +1,4 @@
-﻿
-using Application.Common;
+﻿using Application.Common;
 using Application.DTOs.UserDtos;
 
 namespace Application.Interfaces.UserInterfaces;

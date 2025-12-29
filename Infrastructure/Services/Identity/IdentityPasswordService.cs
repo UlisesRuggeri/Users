@@ -13,17 +13,17 @@ public class IdentityPasswordService : IPasswordService
 
     public async Task<Result<string>> GeneratePasswordResetToken(string email)
     {
-        var user = await _userManager.FindByNameAsync(email);
+        var user = await _userManager.FindByEmailAsync(email);
         if (user == null)
             return Result<string>.Failure("User not found");
 
         var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-        return Result<string>.Failure(token);
+        return Result<string>.Succes(token);
     }
 
-    public async Task<Result<bool>> ResetPassword(int userId, string token, string newPassword)
+    public async Task<Result<bool>> ResetPassword(string userId, string token, string newPassword)
     {
-        var user = await _userManager.FindByIdAsync(userId.ToString());
+        var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
             return Result<bool>.Failure(error: "User not found");
 
@@ -34,9 +34,9 @@ public class IdentityPasswordService : IPasswordService
         return Result<bool>.Succes(true);
     }
 
-    public async Task<Result<bool>> ChangePassword(int userId, string currentPassword, string newPassword)
+    public async Task<Result<bool>> ChangePassword(string userId, string currentPassword, string newPassword)
     {
-        var user = await _userManager.FindByIdAsync(userId.ToString());
+        var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
             return Result<bool>.Failure(error: "User not found");
 

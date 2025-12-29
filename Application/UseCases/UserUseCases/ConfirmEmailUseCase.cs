@@ -16,18 +16,18 @@ public class ConfirmEmailUseCase
         _repo = repo;
     }
 
-    public async Task<Result<bool>> ConfirmEmail(int userId)
+    public async Task<Result<bool>> SendConfirmEmail(string userId)
     {
         var user = await _repo.GetByIdAsync(userId);
         if (user == null)
             return Result<bool>.Failure(error: "Usuario No encontrado");
 
         var tokenResult = await _emailService.GenerateEmailConfirmationToken(userId);
-        if (!tokenResult.IsSucces)
+        if (!tokenResult.IsSuccess)
             return Result<bool>.Failure(error: tokenResult.Error!);
 
         var token = Uri.EscapeDataString(tokenResult.Value!); 
-        var confirmationLink = $"https://miapp.com/confirm-email?userId={userId}&token={token}";
+        var confirmationLink = $"http://localhost:5178/Api/Users/confirm-email?userId={userId}&token={token}";
 
         var subject = "Confirmar email";
         var body = $@"
@@ -36,10 +36,14 @@ public class ConfirmEmailUseCase
         {confirmationLink}
         ";
         var sendResult = await _emailService.SendEmailAsync(user.Email!, subject, body);
-        if (!sendResult.IsSucces)
+        if (!sendResult.IsSuccess)
             return Result<bool>.Failure(error: sendResult.Error!);
 
-        return Result<bool>.Succes(value: true, message: "Email Confirmado exitosamente");
+        return Result<bool>.Succes(value: true, message: "Email de confirmacion enviado exitosamente");
+    }
 
+    public async Task ConfirmEmail(string id, string token)
+    {
+        await _emailService.ConfirmEmail(id, token);
     }
 }

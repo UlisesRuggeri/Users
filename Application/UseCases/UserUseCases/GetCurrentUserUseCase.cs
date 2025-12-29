@@ -15,7 +15,7 @@ public class GetCurrentUserUseCase
     {
         var result = await _claimService.GetCurrentUser();
 
-        if (!result.IsSucces)
+        if (!result.IsSuccess)
             return Result<UserDto>.Failure(error: result.Error!);
 
         return Result<UserDto>.Succes(result.Value!);

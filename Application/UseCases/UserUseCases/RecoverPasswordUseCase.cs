@@ -25,11 +25,11 @@ public class RecoverPasswordUseCase
             return Result<bool>.Failure(error: "User not found");
 
         var tokenResult = await _passwordService.GeneratePasswordResetToken(email);
-        if (!tokenResult.IsSucces)
+        if (!tokenResult.IsSuccess)
             return Result<bool>.Failure(error: tokenResult.Error!);
 
         var token = Uri.EscapeDataString(tokenResult.Value!);
-        var link = $"https://miapp.com/reset-password?userId={user.Id}&token={token}";
+        var link = $"http://localhost:5178/Api/Users/changePassword?userId={user.Id}&token={token}";
 
         await _emailService.SendEmailAsync(user.Email!, "Reset your password",
             $"{user.Name}, Click para cambiar contrasenia: {link}");

@@ -13,30 +13,39 @@ public class IdentityClaimService : IClaimService
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly SignInManager<ApplicationUser> _signInManager;
-
-    public IdentityClaimService(SignInManager<ApplicationUser> signInManager, IHttpContextAccessor httpContextAccessor)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public IdentityClaimService(UserManager<ApplicationUser> userManager,SignInManager<ApplicationUser> signInManager, IHttpContextAccessor httpContextAccessor)
     {
+        _userManager = userManager;
         _httpContextAccessor = httpContextAccessor;
         _signInManager = signInManager;
-
     }
 
-    public Task<Result<UserDto>> GetCurrentUser()
+    public async Task<Result<UserDto>> GetCurrentUser()
     {
-        var user = _httpContextAccessor.HttpContext?.User;
+        var userClaims = _httpContextAccessor.HttpContext?.User;
 
-        if (user == null || !user.Identity!.IsAuthenticated)
-            return Task.FromResult(Result<UserDto>.Failure(error: "no hay un usuario autenticado"));
+        if (userClaims == null || !userClaims.Identity!.IsAuthenticated) return Result<UserDto>.Failure(error: "no hay un usuario autenticado");
+
+        var userId = userClaims.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        if (userId == null) return Result<UserDto>.Failure(error: "No se encontró el Id del usuario");
+
+        var appUser = await _userManager.FindByIdAsync(userId);
+        if (appUser == null)
+            return Result<UserDto>.Failure(error: "Usuario no encontrado");
 
         var dto = new UserDto
         {
-            Id = user.FindFirst(ClaimTypes.NameIdentifier)?.Value,
-            Email = user.FindFirst(ClaimTypes.Email)?.Value,
-            Name = user.FindFirst(ClaimTypes.Name)?.Value
+            Id = appUser.Id.ToString(),
+            Email = appUser.Email,
+            Name = appUser.Name,
+            Role = (await _userManager.GetRolesAsync(appUser)).FirstOrDefault() ?? "user",
+            IsActive = appUser.IsActive
         };
 
-        return Task.FromResult(Result<UserDto>.Succes(value:dto, message: "SE COMPLETO getCurrentUser de identity, con validaciones .IsAuthenticated"));
+        return Result<UserDto>.Succes(value: dto, message: "SE COMPLETO getCurrentUser de identity, con validaciones .IsAuthenticated");
     }
+
 
     public async Task SignOutAsync()
     {

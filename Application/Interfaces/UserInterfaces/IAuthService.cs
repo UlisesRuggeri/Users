@@ -1,6 +1,5 @@
 ﻿using Application.Common;
 using Application.DTOs.UserDtos;
-using Domain.Models;
 
 namespace Application.Interfaces.UserInterfaces;
 

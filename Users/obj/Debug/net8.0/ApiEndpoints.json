@@ -13,10 +13,20 @@
     "ContainingType": "Users.Controllers.UserController",
     "Method": "ChangePassword",
     "RelativePath": "Api/Users/changePassword",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
       {
         "Name": "dto",
         "Type": "Application.DTOs.UserDtos.ChangePasswordDto",
@@ -28,14 +38,51 @@
   {
     "ContainingType": "Users.Controllers.UserController",
     "Method": "ConfirmEmail",
-    "RelativePath": "Api/Users/confirmEmail/{id}",
-    "HttpMethod": "POST",
+    "RelativePath": "Api/Users/confirm-email",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Users.Controllers.UserController",
+    "Method": "SendConfirmEmail",
+    "RelativePath": "Api/Users/confirmEmail/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Users.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "Api/Users/deleteUser",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.DTOs.UserDtos.DeleteUserRequest",
         "IsRequired": true
       }
     ],
@@ -61,13 +108,13 @@
     "ContainingType": "Users.Controllers.UserController",
     "Method": "RecoverPassword",
     "RelativePath": "Api/Users/recoverPassword",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
+        "Name": "dto",
+        "Type": "Application.DTOs.UserDtos.RecoverPasswordRequest",
         "IsRequired": true
       }
     ],
@@ -77,13 +124,29 @@
     "ContainingType": "Users.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "Api/Users/register",
-    "HttpMethod": "PUT",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
         "Type": "Application.DTOs.UserDtos.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Users.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "Api/Users/updateUser",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.DTOs.UserDtos.UpdateUserRequest",
         "IsRequired": true
       }
     ],

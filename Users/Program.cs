@@ -6,6 +6,7 @@ using Infrastructure.Persistence.Data;
 using Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Users.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +22,14 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 builder.Services.AddInfrastructureServices();
 builder.Services.AddApplicationServices();
+
+builder.Services.AddScoped<GlobalExceptionHandlingMiddleware>();
+
 builder.Services.AddControllers();
+
+builder.Services.AddAuthorization(Options => {
+    Options.AddPolicy("ActiveUser", policy => policy.RequireClaim("IsActive", "true"));
+});
 
 var app = builder.Build();
 
@@ -30,6 +38,16 @@ using (var scope = app.Services.CreateScope())
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await RoleSeeder.SeedRoles(roleManager);
 }
+
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

@@ -1,5 +1,4 @@
-﻿
-using Application.Common;
+﻿using Application.Common;
 using Application.DTOs.UserDtos;
 using Application.Interfaces.UserInterfaces;
 using Domain.Interfaces;
@@ -19,21 +18,20 @@ public class LoginUseCase
         _authService = authService;
         _repo = repo;
     }
-    public async Task<Result<int>> Login(LoginRequest dto)
+    public async Task<Result<string>> Login(LoginRequest dto)
     {
         var user = await _repo.GetByEmailAsync(dto.Email!);
-        if (user == null) return Result<int>.Failure(error: "User not found");
+        if (user == null) return Result<string>.Failure(error: "User not found");
 
-        if (!user.IsActive)
-            return Result<int>.Failure(error: "Usuario blocked");
+        if (!user.IsActive) return Result<string>.Failure(error: "Usuario bloqueado");
 
         var loginResult = await _authService.Login(dto);
-        if (!loginResult.IsSucces)
-            return Result<int>.Failure(error: loginResult.Error!);
+        if (!loginResult.IsSuccess)
+            return Result<string>.Failure(error: loginResult.Error!);
 
         if (_authSettings.RequireConfirmedEmail && !user.EmailConfirmed)
-            return Result<int>.Failure(value: user.Id, error: "You have to confirm your email to continue");
+            return Result<string>.Failure(value: user.Id.ToString(), error: "You have to confirm your email to continue");
 
-        return Result<int>.Succes(user.Id);
+        return Result<string>.Succes(user.Id.ToString());
     }
 }

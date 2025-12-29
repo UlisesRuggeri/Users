@@ -1,32 +1,23 @@
 ﻿
-using Application.Common;
 using Application.DTOs.UserDtos;
 using Application.Interfaces.UserInterfaces;
 using Domain.Interfaces;
-
+using Application.Common;
 namespace Application.UseCases.UserUseCases;
 
-public class ChangePasswordUseCase
+public class ChangePasswordUseCase(IUserRepository repo,IPasswordService passwordService)
 {
-    private readonly IPasswordService _passwordService;
-    private readonly IUserRepository _repo;
+    private readonly IPasswordService _passwordService = passwordService;
+    private readonly IUserRepository _repo = repo;
 
-    public ChangePasswordUseCase(
-        IUserRepository repo,
-        IPasswordService passwordService)
+    public async Task<Result<bool>> ChangePassword(string userId,string token,ChangePasswordDto dto)
     {
-        _repo = repo;
-        _passwordService = passwordService;
-    }
-
-    public async Task<Result<bool>> ChangePassword(ChangePasswordDto dto)
-    {
-        var user = await _repo.GetByIdAsync(dto.UserId);
+        var user = await _repo.GetByIdAsync(userId);
         if (user == null)
             return Result<bool>.Failure(error: "User not found");
 
-        var result = await _passwordService.ResetPassword(dto.UserId, dto.Token!, dto.NewPassword!);
-        if (!result.IsSucces)
+        var result = await _passwordService.ResetPassword(userId, token, dto.NewPassword!);
+        if (!result.IsSuccess)
             return Result<bool>.Failure(error: result.Error!);
 
         return Result<bool>.Succes(value: true, message: "Se cambio la contrasenia correctamente");

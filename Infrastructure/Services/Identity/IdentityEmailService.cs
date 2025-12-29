@@ -1,6 +1,7 @@
 ﻿
 using Application.Common;
 using Application.Interfaces.UserInterfaces;
+using Domain.Exceptions;
 using Infrastructure.Persistence.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -17,17 +18,17 @@ public class IdentityEmailService : IEmailService
     public IdentityEmailService( UserManager<ApplicationUser> userManager, IConfiguration config)
     {
         _userManager = userManager;
-        _smtpClient = new SmtpClient("sandbox.smtp.mailtrap.io") 
+        _smtpClient = new SmtpClient("proveedor") 
         {
-            Port = 2525, 
-            Credentials = new NetworkCredential("838f32cdae17b5", "73a304b640bce7"),
+            Port = puerto, 
+            Credentials = new NetworkCredential("usuario", "contrasenia"),
             EnableSsl = true 
         };
     }
 
-    public async Task<Result<string>> GenerateEmailConfirmationToken(int userId)
+    public async Task<Result<string>> GenerateEmailConfirmationToken(string userId)
     {
-        var user = await _userManager.FindByIdAsync(userId.ToString());
+        var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
             return Result<string>.Failure("User not found");
 
@@ -39,12 +40,23 @@ public class IdentityEmailService : IEmailService
     {
         try
         {
-            var mail = new MailMessage("no-reply@miapp.com", to, subject, body);
+            var mail = new MailMessage("no-reply@User.com", to, subject, body);
             await _smtpClient.SendMailAsync(mail);
             return Result<bool>.Succes(true);
         }catch(Exception ex)
         {
             return Result<bool>.Failure(error: $"Error sending{ex.Message}");
         }
+    }
+
+    public async Task ConfirmEmail(string userId, string token)
+    {
+        var user = await _userManager.FindByIdAsync(userId)
+            ?? throw new UserNotFoundException(userId);
+
+        var result = await _userManager.ConfirmEmailAsync(user, token);
+
+        if (!result.Succeeded)
+            throw new Exception("token invalido o expirado");
     }
 }

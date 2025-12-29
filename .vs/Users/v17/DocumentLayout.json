@@ -3,28 +3,56 @@
   "WorkspaceRootPath": "D:\\Users\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|d:\\users\\users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|solutionrelative:users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\services\\identity\\identityemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\identity\\identityemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\services\\identity\\identityclaimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\identity\\identityclaimservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|d:\\users\\users\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|solutionrelative:users\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\dtos\\userdtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\dtos\\userdtos\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\usecases\\userusecases\\recoverpasswordusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\usecases\\userusecases\\recoverpasswordusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|d:\\users\\users\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|solutionrelative:users\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\usecases\\userusecases\\registerusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\usecases\\userusecases\\registerusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\services\\identity\\identitypasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\identity\\identitypasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|d:\\users\\users\\users.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|solutionrelative:users\\users.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\usecases\\userusecases\\loginusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\usecases\\userusecases\\loginusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\usecases\\userusecases\\confirmemailusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\usecases\\userusecases\\confirmemailusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|d:\\users\\users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28273829-EEED-44DF-B0AA-11BD86B21F97}|Users\\Users.csproj|solutionrelative:users\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|d:\\users\\infrastructure\\services\\identity\\identityauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55A7E3EC-2FA5-4B93-A3BA-52FBD831E4FF}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\services\\identity\\identityauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|d:\\users\\application\\usecases\\userusecases\\updateuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A3F2B35-0CBF-4D84-83FC-B085D4F90958}|Application\\Application.csproj|solutionrelative:application\\usecases\\userusecases\\updateuserusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +62,170 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IdentityPasswordService.cs",
+              "DocumentMoniker": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityPasswordService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\Identity\\IdentityPasswordService.cs",
+              "ToolTip": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityPasswordService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\Identity\\IdentityPasswordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T15:14:39.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "D:\\Users\\Application\\DTOs\\UserDtos\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\UserDtos\\RegisterRequest.cs",
-              "ToolTip": "D:\\Users\\Application\\DTOs\\UserDtos\\RegisterRequest.cs",
-              "RelativeToolTip": "Application\\DTOs\\UserDtos\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Users\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\Users\\Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwC8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T15:10:42.441Z",
+              "WhenOpened": "2025-12-29T14:47:28.792Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Users\\Users\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Users\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\Users\\Users\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Users\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAgwDMAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "LoginUseCase.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\UseCases\\UserUseCases\\LoginUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\UserUseCases\\LoginUseCase.cs",
+              "ToolTip": "D:\\Users\\Application\\UseCases\\UserUseCases\\LoginUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\UserUseCases\\LoginUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T15:09:15.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-29T14:45:21.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Users\\Users\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Users\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Users\\Users\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Users\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-24T15:08:06.031Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Users",
-              "DocumentMoniker": "D:\\Users\\Users\\Users.csproj",
-              "RelativeDocumentMoniker": "Users\\Users.csproj",
-              "ToolTip": "D:\\Users\\Users\\Users.csproj",
-              "RelativeToolTip": "Users\\Users.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-24T15:03:21.567Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DependencyInjection.cs",
-              "DocumentMoniker": "D:\\Users\\Infrastructure\\DependencyInjection.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\DependencyInjection.cs",
-              "ToolTip": "D:\\Users\\Infrastructure\\DependencyInjection.cs",
-              "RelativeToolTip": "Infrastructure\\DependencyInjection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:57:52.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Users\\Users\\Program.cs",
               "RelativeDocumentMoniker": "Users\\Program.cs",
               "ToolTip": "D:\\Users\\Users\\Program.cs",
               "RelativeToolTip": "Users\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAhwC4AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:26:23.248Z",
+              "WhenOpened": "2025-12-29T11:58:00.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IdentityAuthService.cs",
+              "DocumentMoniker": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityAuthService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\Identity\\IdentityAuthService.cs",
+              "ToolTip": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityAuthService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\Identity\\IdentityAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T11:51:52.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UpdateUserUseCase.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\UseCases\\UserUseCases\\UpdateUserUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\UserUseCases\\UpdateUserUseCase.cs",
+              "ToolTip": "D:\\Users\\Application\\UseCases\\UserUseCases\\UpdateUserUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\UserUseCases\\UpdateUserUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:36:04.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Users\\Users\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Users\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Users\\Users\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Users\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:03:49.991Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterUseCase.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\UseCases\\UserUseCases\\RegisterUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\UserUseCases\\RegisterUseCase.cs",
+              "ToolTip": "D:\\Users\\Application\\UseCases\\UserUseCases\\RegisterUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\UserUseCases\\RegisterUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T18:32:47.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IdentityClaimService.cs",
+              "DocumentMoniker": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityClaimService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\Identity\\IdentityClaimService.cs",
+              "ToolTip": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityClaimService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\Identity\\IdentityClaimService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T13:06:53.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IdentityEmailService.cs",
+              "DocumentMoniker": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityEmailService.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Services\\Identity\\IdentityEmailService.cs",
+              "ToolTip": "D:\\Users\\Infrastructure\\Services\\Identity\\IdentityEmailService.cs",
+              "RelativeToolTip": "Infrastructure\\Services\\Identity\\IdentityEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T13:56:36.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecoverPasswordUseCase.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\UseCases\\UserUseCases\\RecoverPasswordUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\UserUseCases\\RecoverPasswordUseCase.cs",
+              "ToolTip": "D:\\Users\\Application\\UseCases\\UserUseCases\\RecoverPasswordUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\UserUseCases\\RecoverPasswordUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T18:31:34.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Application\\DependencyInjection.cs",
+              "ToolTip": "D:\\Users\\Application\\DependencyInjection.cs",
+              "RelativeToolTip": "Application\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-28T20:13:04.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ConfirmEmailUseCase.cs",
+              "DocumentMoniker": "D:\\Users\\Application\\UseCases\\UserUseCases\\ConfirmEmailUseCase.cs",
+              "RelativeDocumentMoniker": "Application\\UseCases\\UserUseCases\\ConfirmEmailUseCase.cs",
+              "ToolTip": "D:\\Users\\Application\\UseCases\\UserUseCases\\ConfirmEmailUseCase.cs",
+              "RelativeToolTip": "Application\\UseCases\\UserUseCases\\ConfirmEmailUseCase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T13:57:27.044Z"
             }
           ]
         }
