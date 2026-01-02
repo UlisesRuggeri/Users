@@ -4,7 +4,6 @@ using Application.Common;
 using Application.DTOs.UserDtos;
 using Domain.Interfaces;
 using Domain.Models;
-using System.Runtime.Intrinsics.X86;
 
 namespace Application.UseCases.UserUseCases;
 
@@ -13,7 +12,7 @@ public class UpdateUserUseCase
     private readonly IUserRepository _repo;
     public UpdateUserUseCase(IUserRepository repo) => _repo = repo;
 
-    public async Task UpdateUserAsync(UpdateUserRequest dto, CurrentUserDto currentUser, bool? isActive)
+    public async Task<Result<bool>> UpdateUserAsync(UpdateUserRequest dto, CurrentUserDto currentUser, bool? isActive)
     {
         if(currentUser.Role == "admin") {
             bool aux = isActive ?? true;
@@ -24,7 +23,8 @@ public class UpdateUserUseCase
                 Name = dto.name,
                 IsActive = aux
             };
-            await _repo.UpdateAsync(Updates);
+            var result = await _repo.UpdateAsync(Updates);
+            if (result == false) return Result<bool>.Failure($"No se encontro el usuario con Id{dto.Id}");
         }
         else
         {
@@ -33,7 +33,10 @@ public class UpdateUserUseCase
                 Id = currentUser.Id,
                 Name = dto.name,
             };
-            await _repo.UpdateAsync(Updates);
+            var result = await _repo.UpdateAsync(Updates);
+            if (result == false) return Result<bool>.Failure($"No se encontro el usuario con Id{dto.Id}");
         }
+
+        return Result<bool>.Succes(value: true, message: "Se cambio el usuario");
     }
 }

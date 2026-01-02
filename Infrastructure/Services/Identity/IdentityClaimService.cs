@@ -26,21 +26,16 @@ public class IdentityClaimService : IClaimService
         var userClaims = _httpContextAccessor.HttpContext?.User;
 
         if (userClaims == null || !userClaims.Identity!.IsAuthenticated) return Result<UserDto>.Failure(error: "no hay un usuario autenticado");
-
-        var userId = userClaims.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        if (userId == null) return Result<UserDto>.Failure(error: "No se encontró el Id del usuario");
-
-        var appUser = await _userManager.FindByIdAsync(userId);
-        if (appUser == null)
-            return Result<UserDto>.Failure(error: "Usuario no encontrado");
+        var isActiveClaim = userClaims.FindFirst("IsActive")?.Value;
+        bool isActive = bool.TryParse(isActiveClaim, out var result) && result;
 
         var dto = new UserDto
         {
-            Id = appUser.Id.ToString(),
-            Email = appUser.Email,
-            Name = appUser.Name,
-            Role = (await _userManager.GetRolesAsync(appUser)).FirstOrDefault() ?? "user",
-            IsActive = appUser.IsActive
+            Id = userClaims.FindFirst("Id")?.Value.ToString(),
+            Email = userClaims.FindFirst("Email")?.Value,
+            Name = userClaims.FindFirst("Name")?.Value,
+            Role = userClaims.FindFirst("Role")?.Value,
+            IsActive = isActive
         };
 
         return Result<UserDto>.Succes(value: dto, message: "SE COMPLETO getCurrentUser de identity, con validaciones .IsAuthenticated");

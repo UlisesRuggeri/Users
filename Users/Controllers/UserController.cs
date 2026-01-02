@@ -44,8 +44,8 @@ public class UserController : ControllerBase
             IsActive = currentUser.Value.IsActive
         };
 
-        await _updateUser.UpdateUserAsync(dto, currentUserDto, dto.IsActive);
-
+        var result = await _updateUser.UpdateUserAsync(dto, currentUserDto, dto.IsActive);
+        if (!result.IsSuccess) return NotFound(result.Error);
         return NoContent();
     }
 
@@ -53,7 +53,8 @@ public class UserController : ControllerBase
     [Authorize(Roles = "admin", Policy = "ActiveUser")]
     public async Task<IActionResult> DeleteUser([FromBody] DeleteUserRequest dto)
     {
-        await _deleteUser.DeleteUser(dto.email!);
+        var result = await _deleteUser.DeleteUser(dto.email!);
+        if(!result.IsSuccess) return NotFound(result.Error);
         return NoContent();
     }
 

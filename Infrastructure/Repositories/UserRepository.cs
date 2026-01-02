@@ -70,22 +70,26 @@ public class UserRepository : IUserRepository
         await _userManager.AddToRoleAsync(appUser, role);
     }
 
-    public async Task DeleteAsync(string userEmail)
+    public async Task<bool> DeleteAsync(string userEmail)
     {
         var user = await _userManager.FindByEmailAsync(userEmail);
-        if (user == null) throw new UserNotFoundException(userEmail);
+        if (user == null) return false;
 
         var result = await _userManager.DeleteAsync(user);
         if (!result.Succeeded) throw new ConflictException();
+        return true;
     }
 
-    public async Task UpdateAsync(User user)
+    public async Task<bool> UpdateAsync(User user)
     {
-        var appUser = await _userManager.FindByIdAsync(user.Id!.ToString()) ?? throw new UserNotFoundException(user.Email!);
+        var appUser = await _userManager.FindByIdAsync(user.Id!.ToString());
+
+        if (appUser == null) return false;
 
         appUser.Name = user.Name;
         appUser.IsActive = user.IsActive;
         appUser.UpdatedAt = DateTime.UtcNow;
         await _userManager.UpdateAsync(appUser);
+        return true;
     }
 }
